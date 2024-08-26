@@ -1,0 +1,213 @@
+/* App Container */
+/* Apply black background to the entire page */
+body {
+  background-color: #000000; /* Black background */
+  color: #f5f5f5; /* Light text color for readability */
+  margin: 0;
+  font-family: Arial, sans-serif; /* Consistent font */
+}
+
+/* App Container */
+
+
+/* Transcript Editor Container */
+/* Transcript Editor Container */
+.transcript-editor-container {
+  padding: 12rem; /* Increased padding */
+  border-radius: 1rem; /* Larger border radius for a more rounded look */
+  overflow: hidden; /* Prevent content from resizing the container */
+  margin: auto;
+
+}
+
+/* Transcript Paragraph */
+.transcript-paragraph {
+  background-color: #2d2d2d; /* Darker background */
+  color: #f5f5f5; /* Light text color */
+  padding: 2rem; /* Padding inside the paragraph container */
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  max-height: calc(100% - 100px); /* Adjust based on other elements' height */
+  margin-top: 2.2rem; /* Spacing from controller and timer */
+  font-size: 2.2rem; /* Increase font size for the paragraph */
+}
+
+
+/* Controller and Timer Container */
+/* Controller and Timer Container */
+.controller-timer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; /* Add padding for spacing */
+  background: linear-gradient(45deg, #1a1a1a, #333); /* Gradient background for a modern look */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  border: 1px solid #ffcc00; /* Neon border */
+  position: relative; /* For neon glow effect */
+  
+}
+
+/* Neon Glow Effect */
+.controller-timer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 204, 0, 0.3) 0%, transparent 70%);
+  border-radius: 1rem; /* Match border radius */
+  z-index: -1; /* Behind the container */
+  filter: blur(8px); /* Soft glow effect */
+  opacity: 0.6; /* Semi-transparent */
+}
+
+
+
+
+/* Word Item */
+.word-item {
+  display: inline-block;
+  padding: 0.6rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.word-item.highlighted {
+  background-color: #ffcc006a; /* Bright yellow for highlighted words */
+  font-weight: bold;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for highlighted word */
+}
+
+/* Word Input Field */
+/* Word Input Field */
+/* Word Input Field */
+.word-input {
+  background-color: #2d2d2d;
+  color: #f5f5f5;
+  border: 1px solid #333;
+  border-radius: 0.5rem;
+  font-size: 2.2rem;
+  margin-left: 15px;
+  box-sizing: border-box; /* Adjust box sizing */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  min-width: 0; /* Allow shrinking to fit content */
+}
+
+
+
+/* Adjust the focus styles as needed */
+.word-input:focus {
+  outline: none;
+  border-color: #2a2822; /* Neon border color on focus */
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.8); /* Enhanced glow effect */
+}
+
+/* Text Styling */
+.text {
+  display: inline-block; /* Ensures proper alignment */
+}
+
+
+
+/* Playback Controller */
+/* Playback Controller Styling */
+.playback-controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.control-button {
+  background-color: #3b3b3b;
+  color: #ffffff;
+  padding: 1rem; /* Adjust padding for a round button */
+  border: none;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Ensure icons are centered */
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button:hover {
+  background-color: #9ca114;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.play-pause-button {
+  background-color: #ffcc00;
+  color: #1a1a1a;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.play-pause-button:hover {
+  background-color: #e6b800;
+  transform: scale(1.2);
+}
+
+/* Timer Styling */
+/* Timer Styling */
+.timer-container {
+  background-color: #2d2d2d;
+  color: #ffcc00;
+  padding: 1rem 2rem; /* Increased padding for a larger timer */
+  border-radius: 0.375rem;
+  text-align: center;
+  font-size: 2.5rem; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 1.5rem; /* Adjusted margin to align with the increased size */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Slightly larger shadow */
+  max-width: 180px; /* Increased max-width to fit larger size */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .transcript-editor-container {
+    padding: 1rem;
+  }
+
+  .transcript-paragraph {
+    font-size: 1.8rem;
+  }
+
+  .controller-timer-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .control-button {
+    padding: 0.5rem;
+    margin: 0.3rem;
+  }
+
+  .play-pause-button {
+    transform: scale(1.1);
+  }
+
+  .timer-container {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .transcript-paragraph {
+    font-size: 1.2rem;
+  }
+
+  .control-button {
+    padding: 0.4rem;
+  }
+
+  .timer-container {
+    font-size: 1.5rem;
+  }
+}
