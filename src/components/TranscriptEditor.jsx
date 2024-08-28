@@ -4,6 +4,7 @@ import PlaybackController from './PlaybackController';
 import Timer from './Timer';
 import { usePlayback } from '../hooks/usePlayback';
 import "../styles/global.css";
+import ProgressBar from './ProgressBar';
 
 const initialTranscript = [
   { word: 'Hello', start_time: 0, duration: 500 },
@@ -55,6 +56,7 @@ function TranscriptEditor() {
           totalTime={totalTime}
         />
       </div>
+      <ProgressBar currentTime={currentTime} totalTime={totalTime} />
       <div className="transcript-paragraph">
         <p>
           {transcript.map((wordData, index) => (
